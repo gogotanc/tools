@@ -1,0 +1,14 @@
+version: '2'
+services:
+  demo-tomcat:
+    image: 'registry.cn-hangzhou.aliyuncs.com/tanc/tomcat'
+    ports:
+      - '8080:8080'
+
+  demo-nginx:
+    image: 'registry.cn-hangzhou.aliyuncs.com/tanc/nginx'
+    ports:
+      - '80:80'
+    volumes:
+      - '/Users/tanc/project/tools/nginx/nginx-tomcat.conf:/etc/nginx/nginx.conf'
+
